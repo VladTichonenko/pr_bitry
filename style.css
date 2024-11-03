@@ -1,0 +1,261 @@
+/* Стили для прелоадера */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    animation: pulse 1s infinite;
+}
+
+.loading-bar {
+    width: 80%;
+    height: 4px;
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
+.loading-fill {
+    width: 0;
+    height: 100%;
+    background-color: #007bff;
+    animation: loading 3s linear forwards;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+@keyframes loading {
+    100% { width: 100%; }
+}
+
+/* Стиль для приветственного экрана */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    display: none;
+}
+
+.welcome-text {
+    font-size: 46px;
+    color: #007bff;
+    font-weight: bold;
+    opacity: 0;
+    animation: drawText 3s forwards;
+}
+
+@keyframes drawText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.blue-block {
+    position: relative;
+    padding: 20px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    height: 330px;
+    top: 25%;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.bold-underline {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.welcome-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Основные стили */
+.main-content {
+    display: none;
+}
+
+.header {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-title {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    opacity: 0.7;
+}
+
+.services-list li {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.service-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+
+/* кнопка заказать 
+/* Контейнер для кнопки внизу */
+/* Контейнер для кнопки внизу */
+.bottom-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Выравнивание контейнера по левому краю */
+    width: 100%; /* Ширина контейнера на весь экран */
+    padding: 20px 0; /* Верхний и нижний отступ */
+    box-sizing: border-box;
+}
+
+/* Стили для овальной кнопки */
+.oval-button {
+    background-color: #007bff; /* Синий цвет фона */
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px; /* Овальная форма */
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.oval-button:hover {
+    background-color: #0056b3; /* Более темный синий при наведении */
+}
+
+.card-img {
+    max-width: 100%; /* Ограничивает ширину изображения до ширины карточки */
+    max-height: 150px; /* Устанавливает максимальную высоту изображения */
+    object-fit: contain; /* Сохраняет пропорции изображения */
+    margin: 10px auto; /* Центрирует изображение в пределах карточки */
+    display: block;
+}
+
+.welcome-description {
+    text-align: justify;
+    color: #ffffff;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.bold-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 3px; /* Толщина подчеркивания */
+    text-decoration-color: #ffffff; /* Цвет линии */
+    text-underline-offset: 3px; /* Отступ линии от текста */
+}
+
+
+

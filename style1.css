@@ -1,0 +1,243 @@
+/* Общие стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Синяя шапка с кнопкой Назад */
+.header {
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    color: white;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    z-index: 1000;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header-title {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+}
+
+/* Основной контейнер для калькулятора */
+.calculator-content {
+    margin-top: 80px; /* Отступ, чтобы не перекрывалось шапкой */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.calculator-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.calculator-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Поле для ввода */
+.input-field {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Стили для блока опций */
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Стили для отдельного блока с опцией */
+.option-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.option-block:hover {
+    background-color: #e8e8e8;
+}
+
+/* Скрываем оригинальный чекбокс */
+.option-block input[type="checkbox"] {
+    display: none;
+}
+
+/* Стили для квадратного чекбокса */
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    background-color: white;
+    margin-right: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* При отмеченном чекбоксе */
+.option-block input[type="checkbox"]:checked + .checkbox {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.option-block input[type="checkbox"]:checked + .checkbox + span {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Кнопка "Рассчитать" */
+/* Кнопка "Рассчитать" */
+.calculate-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 999px; /* Овальная форма */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.calculate-button:hover {
+    background-color: #0056b3;
+}
+
+/* Кнопка "Подключить инструменты" */
+.connect-tools-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 999px; /* Овальная форма */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 80%;
+    max-width: 300px;
+}
+
+.connect-tools-button:hover {
+    background-color: #218838;
+}
+
+/* Стиль для кнопки закрытия */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Всплывающий блок инструментов */
+.tools-info {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    max-width: 600px;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px 20px 0 0;
+    text-align: left;
+    transition: bottom 0.4s ease;
+    overflow-y: auto;
+    max-height: 50%;
+}
+
+.tools-info h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.tool {
+    margin-bottom: 20px;
+}
+
+.tool h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.tool p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.price {
+    font-weight: bold;
+    color: #ffd700;
+    margin-top: 8px;
+}
+
+/* Активное состояние всплывающего блока */
+.tools-info.active {
+    bottom: 0;
+}
+
+/* Предупреждающее сообщение */
+.warning-message {
+    display: none;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор бюджета</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<!-- Шапка с кнопкой Назад -->
+<header class="header">
+    <button onclick="window.history.back()" class="back-button">← Назад</button>
+    <h1 class="header-title">BiTry PR</h1>
+</header>
+
+<!-- Основной контент второй страницы -->
+<div class="calculator-content">
+    <h2>Калькулятор бюджета</h2>
+    <p>Введите кол-во подписичков и выберите параметры рекламы</p>
+
+    <!-- Поле для ввода суммы -->
+    <input type="number" id="subscriber-input" class="input-field" placeholder="Введите число подписчиков" step="1000" />
+
+    <!-- Блок предупреждения -->
+    <div id="warning-message" class="warning-message">
+        Минимальное число подписчиков в канале 10 тыс.
+    </div>
+
+    <!-- Блоки с опциями для выбора типа рекламы -->
+    <div class="options">
+        <label class="option-block">
+            <input type="checkbox" id="tg-only" name="ad-type" value="tg-only" />
+            <span class="checkbox"></span>
+            Реклама только в TG
+        </label>
+        <label class="option-block">
+            <input type="checkbox" id="tiktok-tg" name="ad-type" value="tiktok-tg" />
+            <span class="checkbox"></span>
+            Реклама в TikTok, TG
+        </label>
+        <label class="option-block">
+            <input type="checkbox" id="with-bots" name="audience" value="with-bots" />
+            <span class="checkbox"></span>
+            Аудитория с ботами
+        </label>
+    </div>
+
+    
+
+    <!-- Кнопка для расчёта -->
+    <button class="calculate-button" onclick="calculateCost()">Рассчитать</button>
+
+    <!-- Кнопка для подключения инструментов -->
+    <button class="connect-tools-button" onclick="showTools()">Подключить инструменты</button>
+</div>
+
+<!-- Скрытый блок с информацией о инструментах -->
+<div id="tools-info" class="tools-info">
+    <button class="close-button" onclick="closeTools()">✕</button>
+    <h3>Наши инструменты:</h3>
+    <div class="tool">
+        <h4><u>Геймификация каналов</u></h4>
+        <p>Автоматическое вознаграждение монетами ваших подписчиков за активности, реализовано в виде ТМА.</p>
+        <p class="price">Цена: 150$</p>
+    </div>
+    <div class="tool">
+        <h4><u>Автоматические реакции и просмотры</u></h4>
+        <p>Получай 3-10к просмотров и реакции автоматически с реальных аккаунтов при выходе нового поста.</p>
+        <p class="price">Цена: 75$</p>
+    </div>
+</div>
+
+<script src="script1.js"></script>
+</body>
+</html>
